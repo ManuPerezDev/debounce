@@ -8,7 +8,7 @@ export const handlers = [
     },
     DefaultBodyType
   >('https://example.com/user', async ({ request }) => {
-    await delay(1000)
+    await delay(4000)
     const { name } = await request.json()
     if(!name) return HttpResponse.json([])
 
