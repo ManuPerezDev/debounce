@@ -1,4 +1,4 @@
-import {DefaultBodyType, http, HttpResponse, PathParams} from 'msw'
+import {DefaultBodyType, delay, http, HttpResponse, PathParams} from 'msw'
 
 export const handlers = [
   http.post<
@@ -8,6 +8,7 @@ export const handlers = [
     },
     DefaultBodyType
   >('https://example.com/user', async ({ request }) => {
+    await delay(1000)
     const { name } = await request.json()
     const users = [
       'Cristiano Ronaldo',
