@@ -10,6 +10,8 @@ export const handlers = [
   >('https://example.com/user', async ({ request }) => {
     await delay(1000)
     const { name } = await request.json()
+    if(!name) return HttpResponse.json([])
+
     const users = [
       'Cristiano Ronaldo',
       'Cristina',
