@@ -8,7 +8,8 @@ export const handlers = [
     },
     DefaultBodyType
   >('https://example.com/user', async ({ request }) => {
-    await delay(4000)
+    // Simulate a slow network connection or a slow API.
+    // await delay(5000)
     const { name } = await request.json()
     if(!name) return HttpResponse.json([])
 
